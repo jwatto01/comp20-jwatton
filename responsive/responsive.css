@@ -1,4 +1,4 @@
-@media only screen and (min_device_width : 1201px)
+@media only screen and (min_width : 1201px)
 {
    .software
    {
@@ -9,8 +9,8 @@
    }
 }
 
-@media only screen and (min_device_width : 1101px)
-and (max-device-width : 1200px)
+@media only screen and (min_width : 1101px)
+and (max-width : 1200px)
 {
    .software
    {
@@ -21,8 +21,8 @@ and (max-device-width : 1200px)
    }
 
 }
-@media only screen and (min_device_width : 1001px)
-and (max-device-width : 1100px)
+@media only screen and (min_width : 1001px)
+and (max-width : 1100px)
 {
    .software
    {
@@ -33,8 +33,8 @@ and (max-device-width : 1100px)
    }
 
 }
-@media only screen and (min_device_width : 901px)
-and (max-device-width : 1000px)
+@media only screen and (min_width : 901px)
+and (max-width : 1000px)
 {
    .software
    {
@@ -45,8 +45,8 @@ and (max-device-width : 1000px)
    }
 
 }
-@media only screen and (min_device_width : 801px)
-and (max-device-width : 900px)
+@media only screen and (min_width : 801px)
+and (max-width : 900px)
 {
    .software
    {
@@ -57,8 +57,8 @@ and (max-device-width : 900px)
    }
 
 }
-@media only screen and (min_device_width : 701px)
-and (max-device-width : 800px)
+@media only screen and (min_width : 701px)
+and (max-width : 800px)
 {
    .software
    {
@@ -69,8 +69,8 @@ and (max-device-width : 800px)
    }
 
 }
-@media only screen and (min_device_width : 601px)
-and (max-device-width : 700px)
+@media only screen and (min_width : 601px)
+and (max-width : 700px)
 {
    .software
    {
@@ -81,8 +81,8 @@ and (max-device-width : 700px)
    }
 
 }
-@media only screen and (min_device_width : 501px)
-and (max-device-width : 600px)
+@media only screen and (min_width : 501px)
+and (max-width : 600px)
 {
    .software
    {
@@ -93,8 +93,8 @@ and (max-device-width : 600px)
    }
 
 }
-@media only screen and (min_device_width : 401px)
-and (max-device-width : 500px)
+@media only screen and (min_width : 401px)
+and (max-width : 500px)
 {
    .software
    {
@@ -105,7 +105,7 @@ and (max-device-width : 500px)
    }
 
 }
-@media only screen and (max-device-width : 400px)
+@media only screen and (max-width : 400px)
 {
    .software
    {
@@ -114,5 +114,4 @@ and (max-device-width : 500px)
       background-image:url(software.png) -512px -240px;
       background-repeat: no-repeat;
    }
-
 }
