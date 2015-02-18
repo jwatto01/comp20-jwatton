@@ -2,7 +2,6 @@
 {
    .software
    {
-      display: block;
       width: 128px;
       height: 240px;
       background-image:url(software.png) 0px 0px;
@@ -15,7 +14,6 @@ and (max-device-width : 1200px)
 {
    .software
    {
-      display: block;
       width: 128px;
       height: 240px;
       background-image:url(software.png) -128px 0px;
@@ -28,7 +26,6 @@ and (max-device-width : 1100px)
 {
    .software
    {
-      display: block;
       width: 128px;
       height: 240px;
       background-image:url(software.png) -256px 0px;
@@ -41,7 +38,6 @@ and (max-device-width : 1000px)
 {
    .software
    {
-      display: block;
       width: 128px;
       height: 240px;
       background-image:url(software.png) -384px 0px;
@@ -54,7 +50,6 @@ and (max-device-width : 900px)
 {
    .software
    {
-      display: block;
       width: 128px;
       height: 240px;
       background-image:url(software.png) -512px 0px;
@@ -67,7 +62,6 @@ and (max-device-width : 800px)
 {
    .software
    {
-      display: block;
       width: 128px;
       height: 240px;
       background-image:url(software.png) 0px -240px;
@@ -80,7 +74,6 @@ and (max-device-width : 700px)
 {
    .software
    {
-      display: block;
       width: 128px;
       height: 240px;
       background-image:url(software.png) -128px -240px;
@@ -93,7 +86,6 @@ and (max-device-width : 600px)
 {
    .software
    {
-      display: block;
       width: 128px;
       height: 240px;
       background-image:url(software.png) -256px -240px;
@@ -106,7 +98,6 @@ and (max-device-width : 500px)
 {
    .software
    {
-      display: block;
       width: 128px;
       height: 240px;
       background-image:url(software.png) -384px -240px;
@@ -118,7 +109,6 @@ and (max-device-width : 500px)
 {
    .software
    {
-      display: block;
       width: 128px;
       height: 240px;
       background-image:url(software.png) -512px -240px;
