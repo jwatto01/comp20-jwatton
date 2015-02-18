@@ -1,0 +1,140 @@
+.software{
+@media only screen and (min_device_width : 1201px)
+{
+   .top_left
+   {
+      display: block;
+      width: 128px;
+      height: 240px;
+      background-image:software.png;
+      background-repeat: no-repeat;
+      background-position: 0px 0px;
+   }
+}
+
+@media only screen and (min_device_width : 1101px)
+and (max-device-width : 1200px)
+{
+   .top_left
+   {
+      display: block;
+      width: 128px;
+      height: 240px;
+      background-image:software.png;
+      background-repeat: no-repeat;
+      background-position: 0px 0px;
+   }
+
+}
+@media only screen and (min_device_width : 1001px)
+and (max-device-width : 1100px)
+{
+   .top_left
+   {
+      display: block;
+      width: 128px;
+      height: 240px;
+      background-image:software.png;
+      background-repeat: no-repeat;
+      background-position: 0px 0px;
+   }
+
+}
+@media only screen and (min_device_width : 901px)
+and (max-device-width : 1000px)
+{
+   .top_left
+   {
+      display: block;
+      width: 128px;
+      height: 240px;
+      background-image:software.png;
+      background-repeat: no-repeat;
+      background-position: 0px 0px;
+   }
+
+}
+@media only screen and (min_device_width : 801px)
+and (max-device-width : 900px)
+{
+   .top_left
+   {
+      display: block;
+      width: 128px;
+      height: 240px;
+      background-image:software.png;
+      background-repeat: no-repeat;
+      background-position: 0px 0px;
+   }
+
+}
+@media only screen and (min_device_width : 701px)
+and (max-device-width : 800px)
+{
+   .top_left
+   {
+      display: block;
+      width: 128px;
+      height: 240px;
+      background-image:software.png;
+      background-repeat: no-repeat;
+      background-position: 0px 0px;
+   }
+
+}
+@media only screen and (min_device_width : 601px)
+and (max-device-width : 700px)
+{
+   .top_left
+   {
+      display: block;
+      width: 128px;
+      height: 240px;
+      background-image:software.png;
+      background-repeat: no-repeat;
+      background-position: 0px 0px;
+   }
+
+}
+@media only screen and (min_device_width : 501px)
+and (max-device-width : 600px)
+{
+   .top_left
+   {
+      display: block;
+      width: 128px;
+      height: 240px;
+      background-image:software.png;
+      background-repeat: no-repeat;
+      background-position: 0px 0px;
+   }
+
+}
+@media only screen and (min_device_width : 401px)
+and (max-device-width : 500px)
+{
+   .top_left
+   {
+      display: block;
+      width: 128px;
+      height: 240px;
+      background-image:software.png;
+      background-repeat: no-repeat;
+      background-position: 0px 0px;
+   }
+
+}
+@media only screen and (max-device-width : 400px)
+{
+   .bottom_right
+   {
+      display: block;
+      width: 128px;
+      height: 240px;
+      background-image:software.png;
+      background-repeat: no-repeat;
+      background-position: -512px -240px;
+   }
+
+}
+}
