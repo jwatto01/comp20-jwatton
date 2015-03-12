@@ -89,8 +89,8 @@
 				lat = data["lat"];
 				latLng = new google.maps.LatLng(lat, lng);
 				altMarker = new google.maps.Marker({
-					position: latLng;
-					title: login;
+					position: latLng,
+					title: login
 				});
 				altinfowindow = new google.maps.InfoWindow();
 				google.maps.event.addListener(altmarker, 'click', function(){
