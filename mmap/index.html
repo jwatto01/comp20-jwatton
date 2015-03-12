@@ -87,15 +87,19 @@
 				lng = data["lng"];
 				lat = data["lat"];
 				latLng = new google.maps.LatLng(lat, lng);
-				var marker = new google.maps.Marker({
+				marker = new google.maps.Marker({
 					position: latLng,
+					map: map,
 					title: login
 				});
+
+				
 				infowindow = new google.maps.InfoWindow();
 				google.maps.event.addListener(marker, 'click', function(){
 					infowindow.setContent(marker.title);
 					infowindow.open(map, marker);
 				});
+				marker.setMap(map);
 			}
 		}
 			
