@@ -19,7 +19,9 @@
 		var map;
 		var marker;
 		var infowindow = new google.maps.InfoWindow();
-		
+		var altinfowindow = new google.maps.InfoWindow();
+		var altMarker;
+
 		function init()
 		{
 			map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
@@ -57,8 +59,48 @@
 				infowindow.setContent(marker.title);
 				infowindow.open(map, marker);
 			});
-
+			
+			HTTPpost(myLat, myLng, "JWatton");
 		}
+		
+		function HTTPpost(lat, lng, login)
+		{
+			var parameters = "login=" + login + "&lat=" + lat + "&lng=" + lng;
+			var url = "https://secret-about-box.herokuapp.com/sendLocation";
+			req.open("POST", url, true);
+			req.setRequestHeader("Content=type", "application/x-www-form-urlencoded");
+			req.send(parameters);
+			req.onreadystatechange = function(){
+				if(req.status == 200 && req.readyState == 4){
+					data = JSON.parse(req.responseText);
+					length = data.length;
+					for (i = 0; i < length; i++){
+						new_marker(data[i], JWatton);
+					}
+				}
+			}
+		}
+		
+		function new_marker(data, main_name)
+		{
+			username = data["login"];
+			if (username != main_name) {
+				lng = data["lng"];
+				lat = data["lat"];
+				latLng = new google.maps.LatLng(lat, lng);
+				altMarker = new google.maps.Marker({
+					position: latLng;
+					title: login;
+				});
+				altinfowindow = new google.maps.InfoWindow();
+				google.maps.event.addListener(altmarker, 'click', function(){
+					altinfowindow.setContent(altMarker.title);
+					altinfowindow.open(map, altMarker);
+				});
+			}
+		}
+			
+				
 	</script>
 	</head>
 
