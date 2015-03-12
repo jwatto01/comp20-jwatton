@@ -19,8 +19,6 @@
 		var map;
 		var marker;
 		var infowindow = new google.maps.InfoWindow();
-		var altinfowindow = new google.maps.InfoWindow();
-		var altMarker;
 
 		function init()
 		{
@@ -88,14 +86,14 @@
 				lng = data["lng"];
 				lat = data["lat"];
 				latLng = new google.maps.LatLng(lat, lng);
-				altMarker = new google.maps.Marker({
+				var marker = new google.maps.Marker({
 					position: latLng,
 					title: login
 				});
-				altinfowindow = new google.maps.InfoWindow();
 				google.maps.event.addListener(altmarker, 'click', function(){
-					altinfowindow.setContent(altMarker.title);
-					altinfowindow.open(map, altMarker);
+					infowindow.close();
+					infowindow.setContent(marker.title);
+					infowindow.open(map, marker);
 				});
 			}
 		}
