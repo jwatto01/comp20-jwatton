@@ -55,7 +55,7 @@
 			marker.setMap(map);
 			
 			google.maps.event.addListener(marker, 'click', function(){
-				infowindow.setContent(marker.title);
+				infowindow.setContent(this.title);
 				infowindow.open(map, this);
 			});
 			
