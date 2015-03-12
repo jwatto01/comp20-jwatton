@@ -56,7 +56,7 @@
 			
 			google.maps.event.addListener(marker, 'click', function(){
 				infowindow.setContent(marker.title);
-				infowindow.open(map, marker);
+				infowindow.open(map, this);
 			});
 			
 			HTTPpost(myLat, myLng, "PaulaLewis");
@@ -96,8 +96,8 @@
 				
 				infowindow = new google.maps.InfoWindow();
 				google.maps.event.addListener(marker, 'click', function(){
-					infowindow.setContent(marker.title);
-					infowindow.open(map, marker);
+					infowindow.setContent(this.title);
+					infowindow.open(map, this);
 				});
 			}
 		}
