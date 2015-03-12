@@ -93,7 +93,7 @@
 					title: username
 				});
 
-				var distance = Math.round(distance(myLat, myLng, lat, lng)*100) / 100;
+				var distance = Math.round(dist(myLat, myLng, lat, lng)*100) / 100;
 				distString = '<h4>' + username + '</h4>' + '<p> Distance from me = ' + distance + ' miles. </p>';
 				marker.content = distString;
 				infowindow = new google.maps.InfoWindow();
