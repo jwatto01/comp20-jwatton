@@ -49,7 +49,7 @@
 
 			marker = new google.maps.Marker({
 				position: me,
-				title: "JWatton",
+				title: "PaulaLewis",
 				icon: 'Smile.png'
 			});
 			marker.setMap(map);
@@ -59,7 +59,7 @@
 				infowindow.open(map, marker);
 			});
 			
-			HTTPpost(myLat, myLng, "JWatton");
+			HTTPpost(myLat, myLng, "PaulaLewis");
 		}
 		
 		function HTTPpost(lat, lng, login)
@@ -99,7 +99,6 @@
 					infowindow.setContent(marker.title);
 					infowindow.open(map, marker);
 				});
-				marker.setMap(map);
 			}
 		}
 			
