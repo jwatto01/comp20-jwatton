@@ -106,6 +106,9 @@
 			
 		function dist(myLat, myLng, Lat, Lng)
 		{
+			Number.prototype.toRad = function() { 
+				return this * Math.PI / 180;
+		}
 			var R = 3963.17;
 			var x1 = Lat-myLat;
 			var x2 = Lng-myLng;
