@@ -91,7 +91,8 @@
 					position: latLng,
 					title: login
 				});
-				google.maps.event.addListener(altmarker, 'click', function(){
+				infowindow = new google.maps.InfoWindow();
+				google.maps.event.addListener(marker, 'click', function(){
 					infowindow.setContent(marker.title);
 					infowindow.open(map, marker);
 				});
