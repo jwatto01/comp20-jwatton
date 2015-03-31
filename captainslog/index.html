@@ -15,7 +15,7 @@
 				if (button.which == 13) {
 					day = new Date();
 					input = $("#msg").val();
-					ouputMessage = "<p>" + day + " - " + input + "</p>";
+					outputMessage = "<p>" + day + " - " + input + "</p>";
 					$("#log").prepend(outputMessage);
 					localStorage.setItem(day, outputMessage);
 				}
