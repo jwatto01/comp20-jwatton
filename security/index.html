@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title> Marauder's Map Security Report</title>
+
+</head>
+<body>
+<h1>Security Assessment of Marauder's Map</h1>
+<p> Assessed by Jacob Watton</p>
+
+<h2> Introduction </h2>
+<p> This assessment tests the security of the <a href="http://shielded-citadel-8560.herokuapp.com/">Marauder's Map</a> web application developed by NZarilli. Ths application is meant to show the user's location and other locations that have been checked in as well as distances from those other checkins by providing an API for other developers to submit their location and retrieve others'locations and distances from said locations. The application also provides a service to search other users by username. There are several vulnerabilities in this application which I will explore and provide solutions for. My main focus is security and privacy issues. </p>
+
+
+<h2> Methodology </h2>
+<p> In order to find the security vulnerabilities in this application, I first performed attacks without reading the source code. Such attacks included cross site scripting and erroneous input. I then read through the source code for the application. This revealed some basic errors in security. I then used curl in order to test the database entries. After this, I ran the application using a proxy from burpsuite to find erroneous input flaws. 
+</p>
+
+<h2> Abstraction of Findings</h2>
+
+<p> The main problem in this application is there is no sanitization on user input making it extremely vulnerable to XSS and 
+bypassing field restrictions. This could allow attackers to run a script on a user's page and possibly access secret data or even crash the server. </p>
+
+<h2> Issues Found </h2>
+<ol>
+<li><h3>Cross-Site Scripting</h3>
+<ul>
+<li> Affects Get API but is committed in Post API</li>
+<li> Severity of Issue: <strong>high</strong></li>
+<li> Description of Issue: Data submitted via the Post API is not sanitized, allowing potential attackers to submit a script or basically anything they want in place of an actual username. I found this vulnerability by sending a post request via curl. When I entered <code> curl --data "login=&ltscript&gtalert('script ran')&lt/script&gt&lat=222&lng=111" https://shielded-citadel-8560.herokuapp.com/sendLocation</code>, the script was entered as the username, so if there were to be an actual, potentially dangerous script there, it would run whenever the Get request is called from the API. The result: <img src="XSSexampleResult.png" title= "Client Site script result"/></li>
+<li> How to Resolve: In order to prevent, we need to remove the ability for data to be interpreted as code. To do so we can force commonly dangerous characters to their HTML-code equivalent. For example &lt would become '& l t' without spaces. </li>
+</ul></li>
+
+<li><h3>No permission to make API calls</h3>
+<ul>
+<li> Affects Get API and the database but is committed in Post API</li>
+<li> Severity of Issue: <strong> medium</strong></li>
+<li> Description of issue: Any person can use the API to send information to the database. This is an issue for a few reasons. The first is anyone can inject erroneous data into the database. The second issue is, if someone attacks the database, it cannot be tracked back to them because there was no verification in the first place. </li>
+<li> Proof: I was able to input data from my terminal using curl the same way I did in the first issue without any permission granted.</li>
+<li> Resolution: This issue can be resolved by creating API keys or forcing developers/users to log in prior to using the API calls. Therefore if a malicious call is made, it can be tracked back to the user.</li>
+</ul></li>
+
+<li><h3>Accepting Bad Input</h3>
+<ul>
+<li> Affects Get API </li>
+<li> Severity of Issue: <strong> Low</strong></li>
+<li> Description of issue: By not checking the input for longitude and latitude, one can enter invalid values or even non values that will still be inserted into the database.</li> 
+<li> Proof: I found this vulnerability by sending a post request via curl. When I entered <code> curl --data "login=jsonError&lat=flip&lng=flop" https://shielded-citadel-8560.herokuapp.com/sendLocation</code>, the database accepted that entry and output <img src="badinputexample.png" title="Bad input result"/></li>
+<li> Resolution: Ensure that each input is a properly formatted JSON value. If it is not an acceptable number, send an error to the user. </li></ul></li></ol>
+
+<h2> Conclusion </h2>
+<p> There are some huge vulnerabilities in this web application. The main issue at the moment is the lack of sanitization of input to the database allowing XSS and unwanted API calls from unknown sources. Furthermore, the application accepts bad input and allows access to the database. If the vulerabilities listed above or fixed, the site will be less vulnerable. I would charge $500 dollars to fix these vulnerabilities. 
+</p> 
+
+</body>
+</html>
+
